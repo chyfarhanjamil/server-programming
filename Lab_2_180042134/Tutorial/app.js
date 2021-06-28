@@ -1,13 +1,14 @@
 const express = require('express');
 const app = express();
-const userRoutes = require("./routes/userRoutes.routes");
+const userRoutes = require('./routes/userRoutes.routes');
 
-app.use('/users/',userRoutes);
+app.use(userRoutes);
 app.get('/', (req, res) => {
-	res.send('<h1>Home Page - Get</h1>');
+	//res.send('<h1>Home Page - Get</h1>');
+	res.sendFile('home.html', {root: './views'});
 });
 app.post('/', (req, res) => {
-	res.send('<h1>Home Page - post</h1>');
+	res.send('<h1>Home Page - post</h1><a href="/register">Register</a>');
 });
 app.get('/about', (req, res) => {
 	// res.cookie('username', 'tasnim');
