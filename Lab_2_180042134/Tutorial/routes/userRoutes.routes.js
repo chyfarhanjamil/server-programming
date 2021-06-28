@@ -1,33 +1,20 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
+const isLoggedIn = require('./../middlewares/auth.middlewares');
+const { getRegister, postRegister, getLogin, getdashboard } = require('./../controllers/userController.controllers');
 
-router.use(bodyParser.urlencoded({extended: false}));
+router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.json());
 
-router.get('/login', (req, res) => {
-	const { id, username } = req.query;
-	// const id = req.query.id;
-	// const username = req.query.username;
+router.get('/login', getLogin);
 
-	res.send(`user with id - ${id} and Username - ${username} is requesting to login`);
-});
+router.get('/dashboard', getdashboard);
 
-router.get('/dashboard/:id/:username', (req, res) => {
-	// const id = req.params.id;
-	const { id, username } = req.params;
-	res.send(`user with id - ${id} and Username - ${username} is requesting to login`);
-});
+// router.get('/register', getRegister);
 
-router.get('/register', (req, res) => {
-	res.sendFile('register.html', { root: './views/users' });
-});
+// router.post('/register', isLoggedIn,postRegister);
 
-router.post('/register', (req, res) => {
-    const username = req.body.username;
-    const email = req.body.email;
-	//res.sendFile('register.html', { root: './views/users' });
-    res.send(`user with email - ${email} and Username - ${username} is requesting to login`)
-});
+router.route('/register').all(isLoggedIn).get(getRegister).post(postRegister);
 
 module.exports = router;

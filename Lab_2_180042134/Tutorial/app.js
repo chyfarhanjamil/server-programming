@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
 const userRoutes = require('./routes/userRoutes.routes');
+const morgan = require('morgan');
 const {logger, printSomething} = require('./middlewares/app.middlewares');
 
+
 //app.use([logger, printSomething]);
+app.use(morgan('tiny'));
 app.use(express.static('public'));
 //app.use(logger); --To use middleware in all the routes without mentioning them explicitly
 app.use(userRoutes);
