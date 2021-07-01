@@ -4,6 +4,10 @@ const app = express();
 const session = require('express-session');
 const flash = require('connect-flash');
 const mongoose = require('mongoose');
+const passport = require('passport');
+
+//passport strategy
+require('./config/passport')(passport);
 
 //Connection to db
 mongoose
@@ -33,6 +37,9 @@ app.use(
 	})
 );
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 //Body parser
 app.use(express.urlencoded({ extended: false }));
