@@ -7,6 +7,9 @@ app.use(express.static('public'));
 //View Engine
 app.set('view engine', 'ejs');
 
+//Body parser
+app.use(express.urlencoded({extended:false}));
+
 //Routes
 const indexRoutes = require('./routes/index.routes');
 const userRoutes = require('./routes/users.routes');
