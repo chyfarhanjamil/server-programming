@@ -5,5 +5,11 @@ const ensureAuthenticated=(req, res, next)=>{
         req.flash('error', 'You do not have access!')
         res.redirect('/users/login');
     }
-}
-module.exports = ensureAuthenticated;
+};
+const addUserData = (req, res, next) => {
+    res.locals.req = req;
+    res.locals.res = res;
+    next();
+};
+
+module.exports = {ensureAuthenticated, addUserData};
