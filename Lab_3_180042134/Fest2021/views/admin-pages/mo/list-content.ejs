@@ -12,9 +12,10 @@
       </div>
       <div class="x_content">
         <br />
-        <%let success = 'Data has been deleted successfully!'%> <%let success2 =
-        'Payment completed successfully!'%> <%if(error.length>0){if(error ==
-        success || error == success2){%>
+        <%let success = 'Data has been deleted successfully!'%>
+        <%let success2 = 'Payment completed successfully!'%>
+        <%let success3 = 'Participant has been selected successfully!'%>
+        <%if(error.length>0){if(error == success || error == success2 || error == success3){%>
         <div class="alert alert-success"><%=error%></div>
         <%}else{%>
         <div class="alert alert-danger"><%=error%></div>
@@ -92,7 +93,13 @@
                         <span class="fa fa-chevron"></span>
                       </a>
                     </td>
-                    <td>Edit</td>
+                    <td>
+                      <% const editURL = 'edit/' +participant.id%>
+                      <a href="<%= editURL %>">
+                        <i class="fa fa-pencil"></i>
+                        <span class="fa fa-chevron"></span>
+                      </a>
+                    </td>
                     <td>
                       <% const deleteURL = 'delete/' + participant.id%>
                       <a href="<%= deleteURL %>">
