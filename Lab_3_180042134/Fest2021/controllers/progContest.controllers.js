@@ -116,18 +116,18 @@ const paymentDonePC = (req, res) => {
       participant
         .save()
         .then(() => {
-          let error = "Payment completed succesfully";
+          let error = "Payment completed succesfully!";
           req.flash("error", error);
           res.redirect("/ProgContest/list");
         })
         .catch(() => {
-          let error = "Data could not be updated";
+          let error = "Data could not be updated!";
           req.flash("error", error);
           res.redirect("/ProgContest/list");
         });
     })
     .catch(() => {
-      let error = "Data could not be updated";
+      let error = "Data could not be updated!";
       req.flash("error", error);
       res.redirect("/ProgContest/list");
     });
@@ -142,18 +142,18 @@ const selectPC = (req, res) => {
       participant
         .save()
         .then(() => {
-          let error = "Participant has been selected succesfully";
+          let error = "Team has been selected succesfully!";
           req.flash("error", error);
           res.redirect("/ProgContest/list");
         })
         .catch(() => {
-          let error = "Data could not be updated";
+          let error = "Data could not be updated!";
           req.flash("error", error);
           res.redirect("/ProgContest/list");
         });
     })
     .catch(() => {
-      let error = "Data could not be updated";
+      let error = "Data could not be updated!";
       req.flash("error", error);
       res.redirect("/ProgContest/list");
     });
