@@ -26,17 +26,5 @@ router.get(
   paymentDonePC
 );
 router.get("/pc-select/:id", ensureAuthenticated, addUserData, selectPC);
-// router.get(
-//   "/pc-edit-participant/:id",
-//   ensureAuthenticated,
-//   addUserData,
-//   getEditPC
-// );
-// router.post(
-//   "/pc-edit-participant",
-//   ensureAuthenticated,
-//   addUserData,
-//   postEditPC
-// );
 
 module.exports = router;

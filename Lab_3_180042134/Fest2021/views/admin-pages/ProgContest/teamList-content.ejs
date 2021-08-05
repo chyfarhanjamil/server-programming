@@ -3,7 +3,7 @@
     <div class="col-md-12 col-sm-12">
       <div class="x_panel">
         <div class="x_title">
-          <h2>Programming Contest<small>/Teams' List</small></h2>
+          <h2>Programming Contest<small>Teams' List</small></h2>
           <ul class="nav navbar-right panel_toolbox">
             <li>
               <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -13,9 +13,9 @@
         </div>
         <div class="x_content">
           <br />
-          <% let success3= 'Participant has been selected succesfully'%> <% let
+          <% let success3= 'Participant has been selected succesfully!'%> <% let
           success= 'Data has been deleted successfully!'%> <% let success2=
-          'Payment completed succesfully'%> <% if (error.length>0) {if
+          'Payment completed succesfully!'%> <% if (error.length>0) {if
           (error==success||success2||success3){%>
           <div class="alert alert-success"><%=error%></div>
           <%}else{%>
@@ -34,11 +34,11 @@
                     <tr>
                       <!-- <th>ID</th> -->
                       <th>Team Name</th>
-                      <th>Institute</th>
-                      <th>Coach <br />Information</th>
-                      <th>Team Leader <br />Information</th>
-                      <th>Team Member1 <br />Information</th>
-                      <th>Team Member2 <br />Information</th>
+                      <th>University</th>
+                      
+                      <th>Team Leader</th>
+                      <th>Teammate 1</th>
+                      <th>Teammate 2</th>
                       <th>Total</th>
                       <th>Paid</th>
                       <th>Selected</th>
@@ -55,32 +55,26 @@
                     <tr>
                       <td><%=participant.teamName%></td>
                       <td><%=participant.institute%></td>
+  
                       <td>
-                        <h7 style="color: rgb(76, 76, 240)">Name:&nbsp;</h7> <%=participant.coachName%><br />
-                        <h7 style="color: rgb(76, 76, 240)">Contact No:&nbsp;</h7> <%=participant.coachContact%><br />
-                        <h7 style="color: rgb(76, 76, 240)">Email:&nbsp;</h7> <%=participant.coachEmail%> <br />
-                        <h7 style="color: rgb(76, 76, 240)">Tshrit Size:&nbsp;</h7> <%=participant.coachTshirt%><br />
+                        <h7 style="font-weight: bold;">Name:&nbsp;</h7><%=participant.TLName%><br />
+                        <h7 style="font-weight: bold;">Contact No.:&nbsp;</h7> <%=participant.TLContact%> <br />
+                        <h7 style="font-weight: bold;">Email:&nbsp;</h7> <%=participant.TLEmail%> <br />
+                        <h7 style="font-weight: bold;">T-shrit:&nbsp;</h7> <%=participant.TLtshirt%> <br />
                       </td>
   
                       <td>
-                        <h7 style="color: rgb(76, 76, 240)">Name:&nbsp;</h7><%=participant.TLName%><br />
-                        <h7 style="color: rgb(76, 76, 240)">Contact No:&nbsp;</h7> <%=participant.TLContact%> <br />
-                        <h7 style="color: rgb(76, 76, 240)">Email:&nbsp;</h7> <%=participant.TLEmail%> <br />
-                        <h7 style="color: rgb(76, 76, 240)">Tshrit Size:&nbsp;</h7> <%=participant.TLtshirt%> <br />
+                        <h7 style="font-weight: bold;">Name:&nbsp;</h7> <%=participant.TM1Name%><br />
+                        <h7 style="font-weight: bold;">Contact No.:&nbsp;</h7> <%=participant.TM1Contact%> <br />
+                        <h7 style="font-weight: bold;">Email:&nbsp;</h7> <%=participant.TM1Email%> <br />
+                        <h7 style="font-weight: bold;">T-shrit:&nbsp;</h7> <%=participant.TM1tshirt%> <br />
                       </td>
   
                       <td>
-                        <h7 style="color: rgb(76, 76, 240)">Name:&nbsp;</h7> <%=participant.TM1Name%><br />
-                        <h7 style="color: rgb(76, 76, 240)">Contact No:&nbsp;</h7> <%=participant.TM1Contact%> <br />
-                        <h7 style="color: rgb(76, 76, 240)">Email:&nbsp;</h7> <%=participant.TM1Email%> <br />
-                        <h7 style="color: rgb(76, 76, 240)">Tshrit Size:&nbsp;</h7> <%=participant.TM1tshirt%> <br />
-                      </td>
-  
-                      <td>
-                        <h7 style="color: rgb(76, 76, 240)">Name:&nbsp;</h7> <%=participant.TM2Name%><br />
-                        <h7 style="color: rgb(76, 76, 240)">Contact No:&nbsp;</h7> <%=participant.TM2Contact%> <br />
-                        <h7 style="color: rgb(76, 76, 240)">Email:&nbsp;</h7> <%=participant.TM2Email%> <br />
-                        <h7 style="color: rgb(76, 76, 240)">Tshrit Size:&nbsp;</h7> <%=participant.TM2tshirt%> <br />
+                        <h7 style="font-weight: bold;">Name:&nbsp;</h7> <%=participant.TM2Name%><br />
+                        <h7 style="font-weight: bold;">Contact No.:&nbsp;</h7> <%=participant.TM2Contact%> <br />
+                        <h7 style="font-weight: bold;">Email:&nbsp;</h7> <%=participant.TM2Email%> <br />
+                        <h7 style="font-weight: bold;">T-shrit:&nbsp;</h7> <%=participant.TM2tshirt%> <br />
                       </td>
   
                       <td><%=participant.total%></td>
@@ -116,7 +110,7 @@
                         ></a>
                       </td>
                       <td>
-                        <% const editURL= 'pc-edit-participant/'+participant._id %>
+                        <% const editURL= 'pc-edit/'+participant._id %>
                         <a href="<%= editURL%>" 
                           ><i class="fa fa-pencil"></i
                           ><span class="fa fa-chevron"></span
