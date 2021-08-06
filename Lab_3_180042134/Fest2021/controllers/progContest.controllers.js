@@ -7,6 +7,10 @@ const postPC = (req, res) => {
   const {
     teamName,
     institute,
+    coachName,
+    coachContact,
+    coachEmail,
+    coachTshirt,
     TLName,
     TLContact,
     TLEmail,
@@ -36,6 +40,10 @@ const postPC = (req, res) => {
         const participant = new ProgContest({
           teamName,
           institute,
+          coachName,
+          coachContact,
+          coachEmail,
+          coachTshirt,
           TLName,
           TLContact,
           TLEmail,

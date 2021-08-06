@@ -32,10 +32,9 @@
                 >
                   <thead>
                     <tr>
-                      <!-- <th>ID</th> -->
                       <th>Team Name</th>
                       <th>University</th>
-                      
+                      <th>Coach <br />Information</th>
                       <th>Team Leader</th>
                       <th>Teammate 1</th>
                       <th>Teammate 2</th>
@@ -55,6 +54,13 @@
                     <tr>
                       <td><%=participant.teamName%></td>
                       <td><%=participant.institute%></td>
+
+                      <td>
+                        <h7 style="font-weight: bold;">Name:&nbsp;</h7><%=participant.coachName%><br />
+                        <h7 style="font-weight: bold;">Contact No.:&nbsp;</h7> <%=participant.coachContact%> <br />
+                        <h7 style="font-weight: bold;">Email:&nbsp;</h7> <%=participant.coachEmail%> <br />
+                        <h7 style="font-weight: bold;">T-shrit:&nbsp;</h7> <%=participant.coachTshirt%> <br />
+                      </td>
   
                       <td>
                         <h7 style="font-weight: bold;">Name:&nbsp;</h7><%=participant.TLName%><br />

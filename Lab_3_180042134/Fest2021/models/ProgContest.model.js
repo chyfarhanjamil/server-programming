@@ -25,6 +25,22 @@ const progContestSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  coachName: {
+    type: String,
+    required: true,
+  },
+  coachContact: {
+    type: String,
+    required: true,
+  },
+  coachEmail: {
+    type: String,
+    required: true,
+  },
+  coachTshirt: {
+    type: String,
+    required: true,
+  },
   TLName: {
     type: String,
     required: true,
