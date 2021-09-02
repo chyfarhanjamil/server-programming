@@ -91,6 +91,10 @@ const progContestSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  key: {
+    type: String,
+    required: true,
+  },
 });
 
 const ProgContest = mongoose.model("programming-contest", progContestSchema);
