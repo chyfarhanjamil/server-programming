@@ -69,19 +69,9 @@ const postPC = (req, res) => {
           .save()
           .then(() => {
             mailer(coachEmail, "Programming Contest", key, coachName);
-            mailer(teamLeaderEmail, "Programming Contest", key, teamLeaderName);
-            mailer(
-              teamMember1Email,
-              "Programming Contest",
-              key,
-              teamMember1Name
-            );
-            mailer(
-              teamMember2Email,
-              "Programming Contest",
-              key,
-              teamMember2Name
-            );
+            mailer(TLEmail, "Programming Contest", key, TLName);
+            mailer(TM1Email, "Programming Contest", key, TM1Name);
+            mailer(TM2Email, "Programming Contest", key, TM2Name);
             error = "Team has been registered successfully!";
             req.flash("error", error);
             res.redirect("/ProgContest/register");
